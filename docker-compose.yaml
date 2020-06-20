@@ -1,0 +1,68 @@
+version: '2'
+services:
+version: '2'
+services:
+  nginx:
+    image: nginx:1.15.0
+    container_name: djangolab_nginx
+    # restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./src:/src
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/djangolab.conf
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+
+      # Comment out lines below to setup SSL and access the application via HTTPS
+      # - /etc/ssl/certs/espresso.maastrichtuniversity.nl.crt:/etc/ssl/certs/espresso.maastrichtuniversity.nl.crt
+      # - /etc/ssl/certs/espresso.maastrichtuniversity.nl.key:/etc/ssl/certs/espresso.maastrichtuniversity.nl.key
+
+      # The ESPRESSO settings.py module has STATIC_ROOT = '/static' so the app will look in the root ('/') directory
+      # in the Docker container. The static files of our project (located in app/static) will be mapped there so
+      # there should be no need for an explicit 'collectstatic'. Note that both Nginx and the Django app need
+      # this mapping
+      - ./src/app/static:/static
+    depends_on:
+      - app
+  app:
+    build: .
+    image: rbrecheisen/djangolab:latest
+    container_name: djangolab_app
+
+    # Add a significant timeout to Gunicorn so when you're debugging and effectively blocking Gunicorn in a
+    # break-point, it's workers do not quit in error....
+    # command: bash -c "sleep 5 && rm -rf /static/* && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic && gunicorn djangolab.wsgi -b 0.0.0.0:8100 --timeout 3600"
+    # command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn djangolab.wsgi -b 0.0.0.0:8100 --timeout 3600"
+    # command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn djangolab.wsgi -b 0.0.0.0:8000 --timeout 3600"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && uwsgi --http :8001 --module djangolab.wsgi"
+
+    # By leaving the SECRET_KEY environment variable empty Docker Compose will look for it in the
+    # environment within which it was started.
+    environment:
+      - SECRET_KEY
+    depends_on:
+      - db
+    volumes:
+      - ./src:/src
+      # - ./src/app/static:/static
+    expose:
+      - "8000"
+    stdin_open: true
+    tty: true
+  db:
+    restart: always
+    image: postgres:10.5-alpine
+    container_name: djangolab_postgres
+    # Keep backup directory outside Git source tree
+    volumes:
+      - djangolab_postgres_data:/var/lib/postgresql/data
+      # TODO: Setup a different directory for saving data backups
+      - /tmp:/tmp
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+volumes:
+  djangolab_postgres_data:
+    driver: local

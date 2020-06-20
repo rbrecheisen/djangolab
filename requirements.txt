@@ -1,0 +1,11 @@
+django
+django-guardian
+django-session-security
+django-simple-history
+django-allauth
+django-rest-auth
+djangorestframework
+djangorestframework-jwt
+httpie
+requests
+coreapi
