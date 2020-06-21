@@ -12,4 +12,5 @@ coreapi
 
 # Docker-specific requirements
 psycopg2
+gunicorn
 uwsgi

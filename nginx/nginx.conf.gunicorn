@@ -4,7 +4,7 @@
 # defined in the Django settings.py
 
 upstream web {
-    server app:8000;
+    server app:8001;
 }
 
 #server {

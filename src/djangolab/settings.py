@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '0.0.0.0',
-    'web',
+    'app',
 ]
 
 
@@ -101,7 +101,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         TOKEN_AUTH_METHOD,
-    )
+    ),
+    # https://stackoverflow.com/questions/57654243/how-to-fix-attributeerror-at-api-doc-autoschema-object-has-no-attribute-ge
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
 TEMPLATES = [
@@ -125,8 +127,8 @@ WSGI_APPLICATION = 'djangolab.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-DATABASES = {
-    'default': {
+DATABASE_CONFIGS = {
+    'postgres': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'postgres',
@@ -134,7 +136,15 @@ DATABASES = {
         # 'HOST': os.environ.get('DB_HOST', 'localhost'),
         'HOST': 'db',
         'PORT': 5432,
+    },
+    'sqlite': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+DATABASES = {
+    'default': DATABASE_CONFIGS['sqlite'],
 }
 
 
@@ -177,7 +187,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = 'app/static'
+# STATIC_ROOT = 'app/static'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+print('STATIC_ROOT: {}'.format(STATIC_ROOT))
 
 # Miscellaneous settings
 LOGIN_URL = '/rest-auth/login/'

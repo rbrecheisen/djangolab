@@ -11,7 +11,8 @@ services:
       - "443:443"
     volumes:
       - ./src:/src
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/djangolab.conf
+      #- ./nginx/nginx.conf:/etc/nginx/conf.d/djangolab.conf
+      - ./nginx/base_nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
 
       # Comment out lines below to setup SSL and access the application via HTTPS
@@ -34,8 +35,8 @@ services:
     # break-point, it's workers do not quit in error....
     # command: bash -c "sleep 5 && rm -rf /static/* && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic && gunicorn djangolab.wsgi -b 0.0.0.0:8100 --timeout 3600"
     # command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn djangolab.wsgi -b 0.0.0.0:8100 --timeout 3600"
-    # command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn djangolab.wsgi -b 0.0.0.0:8000 --timeout 3600"
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && uwsgi --http :8001 --module djangolab.wsgi"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn djangolab.wsgi -b 0.0.0.0:8000 --timeout 3600"
+    # command: bash -c "python manage.py makemigrations && python manage.py migrate && uwsgi --http :8001 --module djangolab.wsgi"
 
     # By leaving the SECRET_KEY environment variable empty Docker Compose will look for it in the
     # environment within which it was started.
@@ -45,9 +46,7 @@ services:
       - db
     volumes:
       - ./src:/src
-      # - ./src/app/static:/static
-    expose:
-      - "8000"
+       - ./src/app/static:/static
     stdin_open: true
     tty: true
   db:
