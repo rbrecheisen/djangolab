@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions
-from app.models import Patient
-from app.serializers import PatientSerializer
+from app.models import Resource
+from app.serializers import ResourceSerializer
 from app.permissions import MyDjangoModelPermissions
 from app.utilities import set_current_user
 
@@ -22,15 +22,15 @@ class CurrentUserMixin(generics.GenericAPIView):
         #     return {'error': repr(e)}
 
 
-class PatientListCreateAPIView(CurrentUserMixin, generics.ListCreateAPIView):
+class ResourceListCreateAPIView(CurrentUserMixin, generics.ListCreateAPIView):
 
-    queryset = Patient.objects.all()
-    serializer_class = PatientSerializer
+    queryset = Resource.objects.all()
+    serializer_class = ResourceSerializer
     permission_classes = (permissions.IsAuthenticated, MyDjangoModelPermissions, )
 
 
-class PatientRetrieveUpdateDestroyAPIView(CurrentUserMixin, generics.RetrieveUpdateDestroyAPIView):
+class ResourceRetrieveUpdateDestroyAPIView(CurrentUserMixin, generics.RetrieveUpdateDestroyAPIView):
 
-    queryset = Patient.objects.all()
-    serializer_class = PatientSerializer
+    queryset = Resource.objects.all()
+    serializer_class = ResourceSerializer
     permission_classes = (permissions.IsAuthenticated, MyDjangoModelPermissions, )

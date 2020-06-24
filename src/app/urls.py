@@ -3,8 +3,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from app import views
 
 urlpatterns = [
-    path('patients/', views.PatientListCreateAPIView.as_view()),
-    path('patients/<str:pk>/', views.PatientRetrieveUpdateDestroyAPIView.as_view()),
+    path('resources/', views.ResourceListCreateAPIView.as_view()),
+    path('resources/<str:pk>/', views.ResourceRetrieveUpdateDestroyAPIView.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
