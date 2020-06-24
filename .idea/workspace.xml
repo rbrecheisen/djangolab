@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3e01f2-0ac1-44e5-a5fa-7d65bc0652c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf.uwsgi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf.org" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf.gunicorn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements-docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-docker.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/djangolab/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/djangolab/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d3e01f2-0ac1-44e5-a5fa-7d65bc0652c6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +142,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
       <window_info anchor="bottom" id="TODO" order="6" />
