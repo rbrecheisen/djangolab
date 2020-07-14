@@ -2,7 +2,7 @@
 Template Django REST Framework project
 
 # to-do
-- 
+- get simple Angular client running that can login
 
 # done
 - fix docker startup
