@@ -14,12 +14,9 @@ class CurrentUserMixin(generics.GenericAPIView):
     """
 
     def dispatch(self, request, *args, **kwargs):
-        # try:
         r = self.initialize_request(request, *args, **kwargs)
         set_current_user(r.user)
         return super(CurrentUserMixin, self).dispatch(request, *args, **kwargs)
-        # except RuntimeError as e:
-        #     return {'error': repr(e)}
 
 
 class ResourceListCreateAPIView(CurrentUserMixin, generics.ListCreateAPIView):

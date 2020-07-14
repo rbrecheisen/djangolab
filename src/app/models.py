@@ -1,7 +1,7 @@
 from uuid import uuid4
 from django.db.models import Model, UUIDField, CharField, ForeignKey, BooleanField, SET_NULL
 from simple_history.models import HistoricalRecords
-from app.utilities import COUNTRIES, create_research_id, get_current_user
+from app.utilities import get_current_user
 
 
 class Resource(Model):
