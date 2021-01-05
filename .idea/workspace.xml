@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3e01f2-0ac1-44e5-a5fa-7d65bc0652c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="1d3e01f2-0ac1-44e5-a5fa-7d65bc0652c6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -125,20 +118,20 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34871796" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -163,13 +156,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf.gunicorn">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf.gunicorn" />
     <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -203,9 +190,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nginx/uwsgi_params">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/uwsgi_params" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -220,20 +205,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf.uwsgi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf.gunicorn">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf.uwsgi" />
+    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf.gunicorn" />
     <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
