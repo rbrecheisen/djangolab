@@ -5,7 +5,7 @@ from app.models import Resource
 
 
 @admin.register(Resource)
-class PatientAdmin(GuardedModelAdmin, SimpleHistoryAdmin):
+class ResourceAdmin(GuardedModelAdmin, SimpleHistoryAdmin):
 
     list_display = (
         'id',
